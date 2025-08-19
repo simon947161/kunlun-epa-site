@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>联系我们 | 昆仑山生态保护协会</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Simple handler to build a mailto link with form data.
+      function submitForm(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const subject = encodeURIComponent('来自网站的联系请求');
+        const body = encodeURIComponent(`姓名: ${name}\n邮箱: ${email}\n\n${message}`);
+        window.location.href = `mailto:info@kmepa.org?subject=${subject}&body=${body}`;
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">昆仑山生态保护协会</div>
+        <nav class="nav-links">
+          <a href="index.html">首页</a>
+          <a href="about.html">关于我们</a>
+          <a href="projects.html">项目</a>
+          <a href="contact.html">联系我们</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Use the default .hero background defined in the stylesheet for the GitHub version -->
+    <section class="hero">
+      <div>
+        <h1>联系我们</h1>
+        <p>
+          期待你的声音！如果你想了解更多项目详情、参与志愿活动或者与我们合作，请通过以下方式与我们取得联系。
+        </p>
+      </div>
+    </section>
+
+    <main class="container">
+      <section>
+        <h2>联系信息</h2>
+        <p>邮箱：<a href="mailto:info@kmepa.org">info@kmepa.org</a></p>
+        <!-- 更新联系方式：将电话号码分为中国和澳洲两条，方便不同地区的伙伴联系 -->
+        <!-- 联系电话更新：按照用户提供的新号码配置，无空格，方便拨打。 -->
+        <p>电话（中国）：+8615352198879 （周一至周五 09:00–18:00 北京时间）</p>
+        <p>电话（澳大利亚）：+610406897042 （周一至周五 09:00–18:00 悉尼时间）</p>
+        <p>地址：中国新疆策勒县昆仑大道 1 号</p>
+      </section>
+
+      <section>
+        <h2>在线留言</h2>
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <div>
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">邮箱</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="message">留言内容</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">发送邮件</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 昆仑山生态保护协会 · 保留所有权利</p>
+    </footer>
+  </body>
+</html>
